@@ -1,2 +1,2 @@
 # kameleon
-Sway desktop environment using openSUSEway theme
+Sway desktop environment w/ openSUSEway theme configuration files.
