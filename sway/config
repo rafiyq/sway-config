@@ -216,3 +216,4 @@ bindsym $mod+r mode "resize"
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/theme
+include ~/.config/sway/config.d/input
