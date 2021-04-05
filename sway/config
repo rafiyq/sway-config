@@ -82,7 +82,7 @@ set $menu wofi --show drun,run | xargs swaymsg exec --
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -215,5 +215,5 @@ bindsym $mod+r mode "resize"
 # }
 
 include /etc/sway/config.d/*
-include ~/.config/sway/config.d/theme
+include ~/.config/sway/config.d/openSUSEway
 include ~/.config/sway/config.d/input
