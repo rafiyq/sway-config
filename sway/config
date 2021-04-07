@@ -1,7 +1,4 @@
 # Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -20,10 +17,24 @@ set $term kitty
 # on the original workspace that the command was run on.
 set $menu wofi --show drun,run | xargs swaymsg exec --
 
+### Option
+# switch between the current and the previously focused one
+bindsym $mod+Tab workspace back_and_forth
+# bindsym $mod+Shift+b move container to workspace back_and_forth
+# Focus follows mouse
+# focus_follows_mouse no
+# Move to next/previous workspace
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+# Move workspace monitor
+bindsym $mod+Shift+bracketleft move workspace to output left
+bindsym $mod+Shift+bracketright move workspace to output right
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-# output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -215,5 +226,6 @@ bindsym $mod+r mode "resize"
 # }
 
 include /etc/sway/config.d/*
-include ~/.config/sway/config.d/openSUSEway
-include ~/.config/sway/config.d/input
+include ~/.config/sway/config.d/blue
+include ~/.config/sway/config.d/inputs
+include ~/.config/sway/config.d/fn-key
