@@ -3,7 +3,7 @@
 
 font pango:IPAGothic 10, DejaVu Sans Mono 9
 
-set $wallpaper ~/Pictures/Wallpaper/landscape/tokyo_street_day.jpg
+set $wallpaper ~/Pictures/Wallpaper/landscape/DarkestHour.jpg
 set $wallpaper_lock /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 output * bg $wallpaper fill
