@@ -16,5 +16,11 @@ bindsym --locked XF86AudioStop exec playerctl stop
 bindsym --locked XF86MonBrightnessDown exec light -U 5
 bindsym --locked XF86MonBrightnessUp exec light -A 5
 
-bindsym XF86Sleep exec swaylock -i $wallpaper_lock --scaling fill
+# Fn keys
 bindsym XF86ScreenSaver exec swaylock -i $wallpaper_lock --scaling fill
+bindsym XF86Battery exec 
+bindsym XF86Sleep exec swaylock -i $wallpaper_lock --scaling fill
+bindsym XF86WLAN exec 
+bindsym XF86WebCam exec 
+bindsym XF86Display exec 
+bindsym XF86TouchpadToggle exec 
