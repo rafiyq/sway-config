@@ -1,0 +1,10 @@
+font=IPAGothic 10
+background-color=#285577BF
+text-color=#ffffff
+border-size=0
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=high]
+background-color=#c0000066
+default-timeout=0
