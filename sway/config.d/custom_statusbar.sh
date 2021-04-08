@@ -41,13 +41,17 @@ mem() {
     awk 'BEGIN {RS = "";FS = "\n"} ; {printf("%.0f\n", 100-$3*100/$1)}'
 }
 
+vol() {
+	  # volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    amixer -M get Master | awk '/Mono.+/ {print $6=="[off]" ? "muted" : "vol:"$4}' | sed -e 's/\[//g;s/\]//g'
+}
 
 formated_date() {
     date "+%a-%d-%b %R"
 }
 
 print_status() {
-    printf "ram:%d%%  temp:%dC  %s  %s  %s\n" "$(mem)" "$(temp)" "$(net)" "$(bat)" "$(formated_date)"
+    printf "ram:%d%% temp:%dC %s %s %s %s\n" "$(mem)" "$(temp)" "$(net)" "$(vol)" "$(bat)" "$(formated_date)"
 }
 
-while true; do print_status; sleep 5; done
+ while true; do print_status; sleep 5; done
