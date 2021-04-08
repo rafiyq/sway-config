@@ -5,3 +5,5 @@ slang=en,eng
 sub-font='Arial'
 sub-font-size=32
 sub-color='#FFFF00'
+
+volume=50
