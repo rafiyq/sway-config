@@ -13,14 +13,14 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioStop exec playerctl stop
 
 # Brightness controls
-bindsym --locked XF86MonBrightnessDown exec light -U 5
-bindsym --locked XF86MonBrightnessUp exec light -A 5
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%-
 
 # Fn keys
 bindsym XF86ScreenSaver exec swaylock -i $wallpaper_lock --scaling fill
-bindsym XF86Battery exec 
-bindsym XF86Sleep exec swaylock -i $wallpaper_lock --scaling fill
-bindsym XF86WLAN exec 
-bindsym XF86WebCam exec 
-bindsym XF86Display exec 
-bindsym XF86TouchpadToggle exec 
+# bindsym XF86Battery exec 
+bindsym XF86Sleep exec "swaylock -i $wallpaper_lock --scaling fill; sleep 1; pkill -USR1 swayidle"
+bindsym XF86WLAN exec airplane-mode
+# bindsym XF86WebCam exec 
+# bindsym XF86Display exec 
+bindsym XF86TouchpadToggle exec input type:touchpad events toggle enabled disabled

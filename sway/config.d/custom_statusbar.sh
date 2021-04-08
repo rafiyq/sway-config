@@ -4,15 +4,16 @@ net() {
 	  if=wlp3s0
     ssid=$(iwconfig $if | sed -e 's/"/ /g' |\
     awk '/ESSID/{print$5}')
-	  if test -z "$ssid"
-	  then
-	      ip=$(ip route get 8.8.8.8 2>/dev/null |\
-        grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
-	      printf "ip:%s" "${ip}"
-	  else
+	  ip=$(ip route get 8.8.8.8 2>/dev/null |\
+	  if [ -n $ssid ]; then
         signal=$(iwconfig $if | sed -e 's/\// /g;s/=/ /g' |\
         awk '/Quality/{printf("%.0f\n", $3*100/$4)}')
         printf "%s(%d%%)" "${ssid}" "${signal}"
+    elif [ -n $ip ]; then
+        grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
+	      printf "ip:%s" "${ip}"
+	  else
+	      printf "disconnected"
 	  fi
 }
 
