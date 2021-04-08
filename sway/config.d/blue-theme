@@ -1,0 +1,29 @@
+# Original configuration write by Drew DeVault
+# https://git.sr.ht/~sircmpwn/dotfiles/tree/master/item/.config/sway
+
+font pango:IPAGothic 10, DejaVu Sans Mono 9
+
+set $blue #285577
+set $gray #282828
+set $red #900000
+
+client.focused $blue $blue #ffffff $blue $blue
+client.unfocused $gray $gray #ffffff $gray $gray
+client.focused_inactive $gray $gray #ffffff $gray $gray
+
+bar {
+    position top
+    pango_markup disabled
+    font pango:IPAGothic 11, DejaVu Sans Mono 10
+    strip_workspace_numbers yes
+    status_command ~/.config/sway/config.d/custom_statusbar.sh
+    colors {
+        background #1F1F1F
+        inactive_workspace $gray $gray #888888
+        active_workspace $gray $gray #ffffff
+        urgent_workspace $red $red #ffffff
+        focused_workspace $blue $blue #ffffff
+        urgent_workspace $red $red #ffffff
+    }
+}
+
