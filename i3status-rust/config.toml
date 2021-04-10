@@ -1,0 +1,51 @@
+[[block]]
+block = "memory"
+display_type = "memory"
+icons = false
+clickable = false
+interval = 5
+warning_mem = 80
+critical_mem = 95
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{average}%"
+
+[[block]]
+block = "net"
+device = "enp0s25"
+format = "{ip}"
+hide_inactive = true
+interval = 30
+
+[[block]]
+block = "net"
+device = "wlp3s0"
+format = "{ssid} {signal_strength}"
+interval = 5
+hide_inactive = true
+
+[[block]]
+block = "sound"
+step_width = 3
+format = "{volume}"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}"
+
+[[block]]
+block = "time"
+format = "%a, %d %b"
+interval = 60
+
+[[block]]
+block = "time"
+format = "%l:%m %P"
+timezone = "Asia/Jakarta"
+interval = 60
+locale = "en_US"
+

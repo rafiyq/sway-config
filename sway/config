@@ -12,16 +12,16 @@ set $down j
 set $up k
 set $right l
 # Terminal emulator
-set $term kitty
+set $term alacritty
 # Application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
 # Wallpaper location
-set $wallpaper ~/Pictures/Wallpaper/landscape/DarkestHour.jpg
+set $wallpaper ~/pics/Wallpaper/landscape/DarkestHour.jpg
 set $wallpaper_lock /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 # Status bar command
-set $status_bar ~/.config/sway/config.d/custom_statusbar.sh
+set $status_bar i3status-rs
 
 
 ### Output configuration
@@ -58,12 +58,12 @@ output * bg $wallpaper fill
 ### Option
 #
 # Sets font for the title bars.
-# font pango:Terminus (TTF)
+font pango:Roboto Mono 10
 # font pango:IPAGothic 10, DejaVu Sans Mono 9
 # Hide mouse after 5 secon
 seat seat0 hide_cursor 5000
 # Border size
-default_border pixel 4
+# default_border pixel 4
 # focus on urgent windows
 focus_on_window_activation urgent
 # Focus follows mouse
@@ -245,8 +245,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioStop exec playerctl stop
     
     # Brightness controls
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%+
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     
     # Fn keys
     bindsym XF86ScreenSaver exec swaylock -i $wallpaper_lock --scaling fill
@@ -268,11 +268,11 @@ bar {
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     status_command $status_bar
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    # colors {
+    #     statusline #ffffff
+    #     background #323232
+    #     inactive_workspace #32323200 #32323200 #5c5c5c
+    # }
 }
 
 ### Idle configuration
@@ -286,4 +286,11 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+### Startup 
+exec mako > /tmp/mako.log 2>&1
+
 include /etc/sway/config.d/*
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemd-notify --ready
