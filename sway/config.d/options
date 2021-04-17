@@ -1,0 +1,16 @@
+### Options
+#
+# Sets font for the title bars.
+font pango:Fira Sans Book 9
+# font pango:IPAGothic 10, DejaVu Sans Mono 9
+# Hide mouse after 5 secon
+seat seat0 hide_cursor 5000
+# Border size
+# default_border pixel 4
+# focus on urgent windows
+focus_on_window_activation urgent
+# Focus follows mouse
+focus_follows_mouse no
+# New workspaces get a reasonable default orientation
+default_orientation auto
+
