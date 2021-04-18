@@ -1,9 +1,9 @@
 ### Startup 
 #
 exec mako > /tmp/mako.log 2>&1
-xwayland disable
+#xwayland disable
 
-exec ~/.config/sway/.config.d/sway-run
+#exec ~/.config/sway/.config.d/sway-run
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec systemd-notify --ready

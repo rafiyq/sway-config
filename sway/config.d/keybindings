@@ -10,6 +10,7 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $launcher
 
     # Screenshoot
     bindsym Print exec grim

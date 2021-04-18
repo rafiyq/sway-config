@@ -3,7 +3,7 @@
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    font pango:Fira Mono 9.5
+    font pango:Fira Mono 9
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.

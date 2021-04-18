@@ -13,6 +13,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
+set $launcher wofi | xargs swaymsg exec --
 # Wallpaper location
 # set $wallpaper /usr/share/backgrounds/default.png
 set $wallpaper /usr/share/backgrounds/pop/tim-mccartney-39907.jpg

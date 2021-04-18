@@ -7,4 +7,4 @@ ln -sfv $PWD/mako ~/.config/
 ln -sfv $PWD/sway ~/.config/
 ln -sfv $PWD/waybar ~/.config/
 ln -sfv $PWD/wofi ~/.config/
-#ln -sfv $PWD/user-dirs.dirs ~/.config/
+ln -sfv $PWD/user-dirs.dirs ~/.config/
