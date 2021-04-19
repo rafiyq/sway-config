@@ -15,8 +15,7 @@ set $term alacritty
 set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
 set $launcher wofi | xargs swaymsg exec --
 # Wallpaper location
-# set $wallpaper /usr/share/backgrounds/default.png
-set $wallpaper /usr/share/backgrounds/pop/tim-mccartney-39907.jpg
+set $wallpaper ~/pictures/Wallpaper/Landscape/UP.jpg
 set $wallpaper_lock $wallpaper
 # Status bar command
 set $status_bar ~/.local/bin/custom_status
