@@ -28,7 +28,7 @@ set $status_bar ~/.local/bin/custom_status
 ### Options
 #
 # Sets font for the title bars.
-font pango:Fira Sans Book 9
+font pango:Fira Sans Book, Font Awesome 5 Free 9
 # font pango:IPAGothic 10, DejaVu Sans Mono 9
 # Hide mouse after 5 secon
 seat seat0 hide_cursor 5000
