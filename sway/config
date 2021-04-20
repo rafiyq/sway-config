@@ -269,7 +269,8 @@ bar {
     font pango:Fira Mono 9
 
     # When the status_command prints a new line to stdout, swaybar updates.
-    status_command while $status_bar; do sleep 1; done
+    # status_command while $status_bar; do sleep 1; done
+    status_command i3status-rs
 
     colors {
         background #111111
@@ -291,7 +292,7 @@ exec swayidle -w \
 ### Startup 
 #
 exec mako > /tmp/mako.log 2>&1
-xwayland disable
+#xwayland disable
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
