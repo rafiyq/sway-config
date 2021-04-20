@@ -1,5 +1,11 @@
 [[block]]
+block = "cpu"
+interval = 1
+format = "{utilization} {frequency}"
+              
+[[block]]
 block = "memory"
+format_mem = "{Mum}/{MTm} MB"
 display_type = "memory"
 icons = false
 clickable = false
@@ -47,5 +53,9 @@ block = "time"
 format = "%l:%m %P"
 timezone = "Asia/Jakarta"
 interval = 60
-locale = "en_US"
+locale = "id_ID"
 
+[theme]
+name = "native"
+[theme.overrides]
+idle_fg = "#C0C0C0"
