@@ -292,6 +292,8 @@ exec swayidle -w \
 ### Startup 
 #
 exec mako > /tmp/mako.log 2>&1
+exec gammastep -l -7.702020:110.602791
+exec megasync
 #xwayland disable
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK

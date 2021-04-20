@@ -52,8 +52,8 @@ interval = 60
 block = "time"
 format = "%l:%m %P"
 timezone = "Asia/Jakarta"
-interval = 60
-locale = "id_ID"
+interval = 1
+locale = "en_US"
 
 [theme]
 name = "native"
