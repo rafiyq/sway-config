@@ -55,7 +55,7 @@ default_orientation auto
 # Configure keyboard layout
   input "1:1:AT_Translated_Set_2_keyboard" {
       xkb_layout "gb"
-      xkb_options "caps:swapescape"
+      xkb_options "caps:swapescape,lv3:ralt_alt"
   }
 #
 # list inputs run: swaymsg -t get_inputs
