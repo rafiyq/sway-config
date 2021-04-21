@@ -281,8 +281,9 @@ bar {
 ### Idle configuration
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -i $wallpaper_lock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 300 'brightnessctl -s && brightnessctl set 5%' resume 'brightnessctl -r' \
+         timeout 600 'swaylock -f -i $wallpaper_lock' \
+         timeout 601 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -i $wallpaper_lock'
 #
 # Lock the screen after 300 seconds of inactivity,
