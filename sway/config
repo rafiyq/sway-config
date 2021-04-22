@@ -291,11 +291,11 @@ exec swayidle -w \
 # and turn your screens back on when resumed. 
 # It will also lock the screen before computer goes to sleep.
 
-### Window Rules
+### Applications Rules
 #
 for_window [app_id="" title="Picture in picture"] floating enable, sticky enable
-for_window [app_id="" title="MEGAsync"] floating enable, sticky enable
-for_window [app_id="MEGAsync"] floating enable, sticky enable
+for_window [class="MEGAsync"] floating enable, sticky enable
+for_window [app_id="imv"] floating enable
 
 ### Startup 
 #
