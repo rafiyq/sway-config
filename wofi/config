@@ -3,5 +3,4 @@ insensitive=true
 hide_scroll=true
 lines=10
 no_actions=true
-term=alacritty
 width=600

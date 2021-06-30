@@ -8,12 +8,12 @@ set $down j
 set $up k
 set $right l
 # set $term alacritty
-set $term gnome-terminal --hide-menubar
+set $term gnome-terminal --hide-menubar --profile=zsh-clean
 set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
-set $launcher wofi | xargs swaymsg exec --
+set $launcher wofi -G | xargs swaymsg exec --
 # set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-set $wallpaper ~/pictures/Wallpaper/Landscape/spacex-81773.jpg
-set $wallpaper_lock ~/pictures/Wallpaper/Landscape/hello-iMac.jpeg
+set $wallpaper ~/Pictures/Wallpaper/Landscape/spacex-81773.jpg
+set $wallpaper_lock ~/Pictures/Wallpaper/Landscape/hello-iMac.jpeg
 set $status_bar ~/.local/bin/custom_status
 set $locking swaylock \
         --image $wallpaper_lock \
@@ -23,7 +23,8 @@ set $locking swaylock \
         --bs-hl-color 00000000
 
 ### Options
-font pango:Fira Sans Book 9, Font Awesome 5 Free 9
+# font pango:Fira Sans Book 9, Font Awesome 5 Free 9
+font pango:Arial 10
 default_orientation auto
 seat seat0 hide_cursor 5000
 # default_border pixel 4
@@ -190,8 +191,8 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     font pango:Fira Mono 9
-    # status_command while $status_bar; do sleep 1; done
-    status_command i3status-rs
+    status_command while $status_bar; do sleep 1; done
+    #status_command i3status-rs
     colors {
         background #111111
     }
@@ -213,7 +214,7 @@ for_window [app_id="imv"] floating enable
 exec mako > /tmp/mako.log 2>&1
 exec gammastep -l -7.702020:110.602791
 exec megasync
-# xwayland disable
+xwayland disable
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
