@@ -7,7 +7,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+# set $term alacritty
+set $term gnome-terminal --hide-menubar
 set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
 set $launcher wofi | xargs swaymsg exec --
 # set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
