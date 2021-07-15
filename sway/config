@@ -7,8 +7,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-# set $term alacritty
-set $term gnome-terminal --hide-menubar --profile=zsh-clean
+set $term alacritty
+#set $term gnome-terminal --hide-menubar --profile=zsh-clean
 set $menu dmenu_path | dmenu -p "Run:" -l 10 | xargs swaymsg exec --
 set $launcher wofi -G | xargs swaymsg exec --
 # set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
@@ -214,10 +214,10 @@ for_window [app_id="imv"] floating enable
 exec mako > /tmp/mako.log 2>&1
 exec gammastep -l -7.702020:110.602791
 exec megasync
-xwayland disable
+#xwayland disable
 
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec systemd-notify --ready
+#exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+#exec systemd-notify --ready
 
 include /etc/sway/config.d/*
