@@ -24,7 +24,7 @@ set $locking swaylock \
 
 ### Options
 # font pango:Fira Sans Book 9, Font Awesome 5 Free 9
-font pango:Arial 10
+font pango:Fira Mono 9
 default_orientation auto
 seat seat0 hide_cursor 5000
 # default_border pixel 4
