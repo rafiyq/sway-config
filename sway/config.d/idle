@@ -1,0 +1,15 @@
+# Idle configuration
+set $wallpaper_lock ~/Pictures/Wallpaper/Landscape/hello-iMac.jpeg
+set $locking swaylock \
+        --image $wallpaper_lock \
+        --daemonize \
+        --hide-keyboard-layout \
+        --indicator-caps-lock \
+        --bs-hl-color 00000000
+
+exec swayidle -w \
+         timeout 300 'brightnessctl -s && brightnessctl set 5%' resume 'brightnessctl -r' \
+         timeout 600 'exec $locking' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'exec $locking'
+

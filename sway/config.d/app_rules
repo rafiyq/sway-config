@@ -1,0 +1,5 @@
+# Applications rules
+for_window [app_id="" title="Picture in picture"] floating enable, sticky enable
+for_window [class="MEGAsync"] floating enable, sticky enable
+for_window [app_id="imv"] floating enable
+
