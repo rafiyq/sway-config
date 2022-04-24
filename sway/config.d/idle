@@ -1,5 +1,5 @@
 # Idle configuration
-set $wallpaper_lock ~/Pictures/Wallpaper/Landscape/hello-iMac.jpeg
+set $wallpaper_lock usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 set $locking swaylock \
         --image $wallpaper_lock \
         --daemonize \
