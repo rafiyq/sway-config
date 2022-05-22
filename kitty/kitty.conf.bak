@@ -1,5 +1,5 @@
 # Themes
-include themes/Tango_Dark.conf
+include themes/frost.conf
 
 # Shell
 shell fish --login --interactive
@@ -26,3 +26,4 @@ enable_audio_bell no
 tab_bar_style powerline
 tab_powerline_style round
 #tab_bar_align center
+
