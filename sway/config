@@ -1,34 +1,36 @@
-# --- Core Variables & Appearance ---
+# Core visuals, environment variables
 include looknfeel.conf
 
-# --- Hardware & Inputs ---
-# include monitors.conf
-include swayidle.conf
-include input/touchpad.conf
+# Hardware Abstraction
+include hardware/hidpi.conf
+include hardware/touchpad.conf
 
-# --- Window Rules & Logic ---
+# Layout logic and application-specific behaviors.
 include rules/system.conf
 include rules/browser.conf
 include rules/pavucontrol.conf
 include rules/policykit-agent.conf
 
-# --- Modes ---
-include mode/passthrough.conf
-
-# --- Key Bindings ---
-include bindings/tiling.conf
-include bindings/apps.conf
-include bindings/utilities.conf
+# All keyboard and mouse event triggers.
+## System Controls
 include bindings/media.conf
-include bindings/brightness.conf
 include bindings/volume.conf
+include bindings/brightness.conf
 include bindings/screenshot.conf
 include bindings/touchpad.conf
 
-# --- Status Bar ---
-include bar/waybar.conf
+## Navigation & Workflow
+include bindings/tiling.conf
+include bindings/apps.conf
+include bindings/utilities.conf
+include mode/passthrough.conf
 
-# --- Autostart ---
+# SERVICES & SHELL
+# UI Components and background daemons.
+include bar/waybar.conf
+include swayidle.conf
+
+# Autostart (Initialization)
 include autostart/systemd-session.conf
 include autostart/systemd-cgroups.conf
 include autostart/policykit-agent.conf
