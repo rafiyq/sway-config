@@ -24,6 +24,7 @@ include bindings/tiling.conf
 include bindings/apps.conf
 include bindings/utilities.conf
 include mode/passthrough.conf
+include mode/resize.conf
 
 # SERVICES & SHELL
 # UI Components and background daemons.
