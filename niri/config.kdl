@@ -9,4 +9,7 @@ include "appearance.kdl"
 include "autostart.kdl"
 include "environment.kdl"
 include "rules.kdl"
-include "bindings.kdl"
+
+include "binds/actions.kdl"
+include "binds/hardware.kdl"
+include "binds/navigation.kdl"
