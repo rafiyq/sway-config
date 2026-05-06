@@ -1,0 +1,126 @@
+configuration {
+    show-icons: true;
+    /* \n puts the subtext on a new line. Pango markup scales it down and applies the muted color */
+    drun-display-format: "{name}\n<span size='9pt' color='#89a1b8'>{generic}</span>";
+}
+
+* {
+    /* Color Palette */
+    selected-text: #f2fcff;
+    text:          #d6e2ee;
+    base:          #1b2d40;
+    panel:         #0c1822;
+    border-col:    #4A6B80; 
+    border-bright: #6fb8e3;
+    edge-light:    #f2fcff;
+    hover:         #102231;
+    selected-bg:   #112a3c;
+    muted:         #89a1b8;
+    foreground:    #d6e2ee;
+    background:    #1b2d40;
+
+    /* Global properties */
+    font: "sans-serif 11"; 
+    background-color: transparent;
+    text-color: @text;
+}
+
+window {
+    width: 720px;
+    background-image: linear-gradient(to bottom, #0c1822fa, #1b2d40f5);
+    border: 1px solid;
+    border-color: #6fb8e3c7; 
+    border-radius: 8px;
+    padding: 12px 18px 10px 14px;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, listview, message ];
+}
+
+inputbar {
+    padding: 0 0 8px 0;
+    margin: 0 0 8px 0;
+    border: 0 0 1px 0;
+    border-color: #4A6B8094; 
+    children: [ entry ];
+}
+
+entry {
+    background-color: #1b2d408c; 
+    border: 1px solid;
+    border-color: #4A6B80c7; 
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-color: @text;
+    placeholder: "Search...";
+    placeholder-color: #89a1b8b3; 
+}
+
+listview {
+    border: 0;
+    margin: 0;
+    padding: 0 2px 0 0;
+    scrollbar: false;
+    spacing: 1px;
+    /* Adjusted lines slightly to accommodate the taller two-line elements */
+    lines: 6; 
+}
+
+element {
+    padding: 5px 8px 5px 6px; /* Slightly increased vertical padding for two lines */
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: transparent;
+    children: [ element-icon, element-text ];
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: #102231eb; 
+    border-color: #4A6B8085; 
+    text-color: @text;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: #112a3cf5; 
+    border: 1px solid;
+    border-color: #6fb8e3ad; 
+    text-color: @selected-text;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 32px; /* Increased icon size slightly to balance the taller text block */
+    margin: 0 10px 0 0;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    markup: true; /* Required to parse the Pango markup in drun-display-format */
+}
+
+message {
+    margin: 8px 0 0 0;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-color: #4A6B808c; 
+    border-radius: 6px;
+    background-color: #1b2d406b; 
+}
+
+textbox {
+    text-color: @muted;
+    font: "sans-serif 9"; 
+}
