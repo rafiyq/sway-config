@@ -1,22 +1,27 @@
 // Input device configuration.
-// Find the full list of options on the wiki:
-// https://yalter.github.io/niri/Configuration:-Input
+// Wiki: https://niri-wm.github.io/niri/Configuration:-Input
+
 input {
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
-            // For example:
-            // layout "us,ru"
+            // layout "us"
+            // variant "colemak_dh_ortho"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            // model ""
+            // rules ""
+            // file "~/.config/keymap.xkb"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
         }
 
-        // Enable numlock on startup, omitting this setting disables it.
+        // repeat-delay 600
+        // repeat-rate 25
+        // track-layout "global"
         numlock
     }
 
@@ -26,15 +31,23 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag false
         // drag-lock
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
+        // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
         // scroll-method "two-finger"
+        // scroll-button 273
+        // scroll-button-lock
+        // tap-button-map "left-middle-right"
+        // click-method "clickfinger"
+        // left-handed
         // disabled-on-external-mouse
+        // middle-emulation
     }
 
     mouse {
@@ -42,7 +55,13 @@ input {
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
+        // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
         // scroll-method "no-scroll"
+        // scroll-button 273
+        // scroll-button-lock
+        // left-handed
+        // middle-emulation
     }
 
     trackpoint {
@@ -53,7 +72,35 @@ input {
         // scroll-method "on-button-down"
         // scroll-button 273
         // scroll-button-lock
+        // left-handed
         // middle-emulation
+    }
+
+    trackball {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+        // left-handed
+        // middle-emulation
+    }
+
+    tablet {
+        // off
+        // map-to-output "eDP-1"
+        // map-to-focused-output
+        // map-to-focused-window
+        // left-handed
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
+    }
+
+    touch {
+        // off
+        // map-to-output "eDP-1"
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
@@ -62,5 +109,11 @@ input {
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     // focus-follows-mouse max-scroll-amount="0%"
+
+    // disable-power-key-handling
+    // workspace-auto-back-and-forth
+
+    // mod-key "Super"
+    // mod-key-nested "Alt"
 }
 
