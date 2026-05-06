@@ -1,19 +1,14 @@
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
+// Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
 // The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
+// Wiki: https://niri-wm.github.io/niri/Configuration:-Outputs
+
 /-output "eDP-1" {
-    // Uncomment this line to disable this output.
     // off
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    // If the refresh rate or mode is missing/invalid, 
+    // niri selects the highest available automatically.
     mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
@@ -33,5 +28,28 @@
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
+
+    variable-refresh-rate // on-demand=true
+    focus-at-startup
+    backdrop-color "#001100"
+
+    hot-corners {
+        // off
+        top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+
+    layout {
+        // ...layout settings for eDP-1...
+    }
+
+    // Custom modes. Caution: may damage your display.
+    // mode custom=true "1920x1080@100"
+    // modeline 173.00  1920 2048 2248 2576  1080 1083 1088 1120 "-hsync" "+vsync"
 }
 
+/-output "HDMI-A-1" {
+    // ...settings for HDMI-A-1...
+}
