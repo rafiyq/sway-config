@@ -1,8 +1,13 @@
-# kameleon
+# Fedora Sway Spin
 
-Sway desktop environment w/ openSUSEway theme configuration files.
+Sway desktop environment build from Fedora Sway spin.
 
 ## tools used
 
-- Nautilus
-- wiremix
+- Nautilus for file explorer
+- wiremix for audio
+- xdg-terminal-exec
+
+## Package removed
+
+- Thunar
