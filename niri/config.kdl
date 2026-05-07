@@ -14,5 +14,6 @@ include "rules/browser.kdl"
 include "rules/terminal.kdl"
 
 include "binds/actions.kdl"
+include "binds/application.kdl"
 include "binds/hardware.kdl"
 include "binds/navigation.kdl"
