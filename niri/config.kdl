@@ -8,7 +8,10 @@ include "outputs.kdl"
 include "appearance.kdl"
 include "autostart.kdl"
 include "environment.kdl"
-include "rules.kdl"
+
+include "rules/system.kdl"
+include "rules/browser.kdl"
+include "rules/terminal.kdl"
 
 include "binds/actions.kdl"
 include "binds/hardware.kdl"
