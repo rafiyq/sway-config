@@ -19,3 +19,15 @@
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+// Dialogs and Open/Save file pickers
+window-rule {
+    match app-id=r#"xdg-desktop-portal-gtk|sublime_text|DesktopEditors|org\.gnome\.Nautilus"# title=r#"^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*)"#
+    open-floating true
+}
+
+// GNOME Calculator
+window-rule {
+    match app-id=r#"org\.gnome\.Calculator"#
+    open-floating true
+}
