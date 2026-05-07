@@ -1,79 +1,82 @@
 @import "themes/lumon.css";
 
 * {
-  font-family: 'Google Sans', 'Symbols Nerd Font', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-  font-size: 12px;
+    font-family:
+        "Google Sans", "Symbols Nerd Font", "Noto Sans Mono",
+        "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace;
+    font-size: 12px;
 }
 
 .modules-left {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 
 .modules-right {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 window#waybar {
-  background-color: @background;
-  color: @foreground;
-  transition-property: background-color;
-  transition-duration: .5s;
+    background-color: @background;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 #workspaces button {
-  all: initial;
-  font-weight: 500;
-  padding: 0 5px;
-  margin: 0 2px;
-  min-width: 9px;
-  opacity: 0.6;
+    all: initial;
+    font-weight: 500;
+    padding: 0 5px;
+    margin: 0 2px;
+    min-width: 9px;
+    opacity: 0.5;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #workspaces button.urgent {
-  color: @critical;
+    color: @critical;
 }
 
-#workspaces button.focused, #workspaces button.active {
-  opacity: 1;
+#workspaces button.focused,
+#workspaces button.active {
+    opacity: 1;
 }
 
 #window,
 #workspaces {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 tooltip {
-  background: @background;
-  color: @foreground;
-  border-radius: 10px;
+    background: @background;
+    color: @foreground;
+    border-radius: 10px;
 }
 
 #custom-menu,
 #mode,
 #mpris {
-  margin: 0 8px;
+    margin: 0 8px;
 }
 
 #mode {
-  padding: 0 12px;
-  background: @critical;
+    padding: 0 12px;
+    background: @critical;
 }
 
 #mpris {
-  font-weight: 400;
-  text-shadow: 0 0 4px @accent;
+    font-weight: 400;
+    text-shadow: 0 0 4px @accent;
 }
-
 
 #custom-notification-indicator,
 #custom-update,
 #idle_inhibitor {
-  color: @accent;
-  margin: 0 4px;
+    color: @accent;
+    margin: 0 4px;
 }
 
 #clock,
@@ -86,7 +89,7 @@ tooltip {
 #pulseaudio,
 #scratchpad,
 #wireplumber {
-  padding: 0 12px;
+    padding: 0 12px;
 }
 
 #battery,
@@ -94,7 +97,7 @@ tooltip {
 #disk,
 #memory,
 #temperature {
-  min-width: 55px;
+    min-width: 55px;
 }
 
 #custom-expand-icon,
@@ -116,24 +119,27 @@ tooltip {
 #disk.warning,
 #temperature.warning,
 #memory.warning {
-  color: @warning;
+    color: @warning;
 }
 
 @keyframes blink {
-  to {
-    color: @critical;
-    text-shadow: 0 0 10px @critical, 0 0 20px @critical, 0 0 30px @critical;
-  }
+    to {
+        color: @critical;
+        text-shadow:
+            0 0 10px @critical,
+            0 0 20px @critical,
+            0 0 30px @critical;
+    }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #temperature.critical,
 #battery.critical:not(.charging) {
-  color: @critical;
-  font-weight: bold;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    color: @critical;
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
