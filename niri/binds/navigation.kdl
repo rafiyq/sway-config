@@ -3,7 +3,7 @@
 
 binds {
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q repeat=false { close-window; }
+    Mod+W repeat=false { close-window; }
 
     // Move focus with Mod + arrow keys
     Mod+Left  { focus-column-left; }
