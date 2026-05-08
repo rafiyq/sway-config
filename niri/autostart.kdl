@@ -1,15 +1,12 @@
+// Autostart
+// Wiki: https://niri-wm.github.io/niri/Configuration:-Miscellaneous
+
 hotkey-overlay {
-    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    // Disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
 }
 
-// Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-at-startup "walker" "--gapplication-service"
