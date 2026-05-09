@@ -1,6 +1,14 @@
-font=Fira Sans Book 10
-default-timeout=5000
-ignore-timeout=1
+text-color=#d6e2ee
+border-color=#6fb8e3
+background-color=#1b2d40
+
+width=512
+height=128
+
+border-size=2
+border-radius=8
+
+default-timeout=54321
 
 [urgency=high]
 default-timeout=0
