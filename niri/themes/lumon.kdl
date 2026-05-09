@@ -1,0 +1,36 @@
+prefer-no-csd
+
+layout {
+    gaps 8
+
+    focus-ring {
+        width 2
+        active-color "#f2fcff11"
+        inactive-color "#30486099"
+    }
+
+    shadow {
+        on
+        softness 16
+        spread 2
+        color "#6fb8e399"
+        inactive-color "#30486055"
+        offset x=0 y=0
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+overview {
+    backdrop-color "#0e1f29ff"
+
+    workspace-shadow {
+        softness 40
+        spread 10
+        offset x=0 y=10
+        color "#6fb8e322"
+    }
+}

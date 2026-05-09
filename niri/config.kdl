@@ -18,3 +18,5 @@ include "binds/actions.kdl"
 include "binds/hardware.kdl"
 include "binds/layout.kdl"
 include "binds/navigation.kdl"
+
+include "themes/lumon.kdl"
