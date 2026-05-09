@@ -1,7 +1,7 @@
 prefer-no-csd
 
 layout {
-    gaps 8
+    gaps 6
 
     focus-ring {
         width 2
@@ -11,7 +11,7 @@ layout {
 
     shadow {
         on
-        softness 16
+        softness 12
         spread 2
         color "#6fb8e399"
         inactive-color "#30486055"
