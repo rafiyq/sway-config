@@ -8,11 +8,12 @@
 
 # List of services to link to niri.service
 SERVICES="
-    mako.service
-    waybar.service
     elephant.service
-    swaybg.service
+    mako.service
     niri-swayidle.service
+    swaybg.service
+    waybar.service
+    walker.service
 "
 
 # Loop through the list and add each as a 'wants' dependency
