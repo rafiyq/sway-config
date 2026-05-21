@@ -11,20 +11,72 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    // Menus
+    Mod+Space hotkey-overlay-title="Launch apps" { spawn "walker"; }
+    Mod+Ctrl+E hotkey-overlay-title="Emoji picker" { spawn-sh "walker -m symbols"; }
+    Mod+Ctrl+C hotkey-overlay-title="Capture menu" { spawn "walker"; }
+    Mod+Ctrl+O hotkey-overlay-title="Toggle menu" { spawn "walker"; }
+    Mod+Ctrl+H hotkey-overlay-title="Hardware menu" { spawn "walker"; }
+    Super+Alt+Space hotkey-overlay-title="Main menu" { spawn "walker"; }
+    Mod+Escape hotkey-overlay-title="System menu" { spawn "walker --provider menus:system"; }
+    Mod+K hotkey-overlay-title="Show key bindings" { show-hotkey-overlay; }
+    XF86PowerOff hotkey-overlay-title="Power menu" { spawn "walker"; }
+    XF86Calculator hotkey-overlay-title="Calculator" { spawn "gnome-calculator"; }
 
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // Aesthetics
+    Mod+Shift+Space hotkey-overlay-title="Toggle top bar" { spawn-sh "killall -SIGUSR1 waybar"; }
+    // SUPER CTRL, SPACE, Theme background menu, exec, omarchy-menu background
+    // SUPER SHIFT CTRL, SPACE, Theme menu, exec, omarchy-menu theme
+    // SUPER, BACKSPACE, Toggle window transparency, exec, omarchy-hyprland-window-transparency-toggle
+    // SUPER SHIFT, BACKSPACE, Toggle window gaps, exec, omarchy-hyprland-window-gaps-toggle
+    // SUPER CTRL, BACKSPACE, Toggle single-window square aspect, exec, omarchy-hyprland-window-single-square-aspect-toggle
+
+    // Notifications
+    Mod+Comma hotkey-overlay-title="Dismiss last notification" { spawn "makoctl dismiss"; }
+    Mod+Shift+Comma hotkey-overlay-title="Dismiss all notifications" { spawn "makoctl dismiss --all"; }
+    // TODO: Implement toggle silencing notifications
+    // Mod+Ctrl+Comma hotkey-overlay-title="Toggle silencing notifications" { spawn ""; }
+    Super+Alt+Comma hotkey-overlay-title="Invoke last notification" { spawn "makoctl invoke"; }
+    Super+Shift+Alt+Comma hotkey-overlay-title="Restore last notification" { spawn "makoctl restore"; }
+
+    // Toggles
+    // TODO: Implement toggle locking on idle
+    // Mod+Ctrl+I hotkey-overlay-title="Toggle locking on idle" { spawn ""; }
+    // TODO: Implement toggle nightlight
+    // Mod+Ctrl+N hotkey-overlay-title="Toggle nightlight" { spawn ""; }
+    Mod+Ctrl+Delete hotkey-overlay-title="Toggle laptop display" { power-off-monitors; }
+    // TODO: Implement toggle laptop display mirroring
+    // Super+Ctrl+Alt+Delete hotkey-overlay-title="Toggle laptop display mirroring" { spawn ""; }
+    // switch:on:Lid Switch,
+    // switch:off:Lid Switch,
+
+    //  Captures
+    Print hotkey-overlay-title="Screenshot" { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Ctrl+Alt+Print { screenshot-window; }
+    Alt+Print hotkey-overlay-title="Screenrecording" { spawn "screenrecord"; }
+    Mod+Print hotkey-overlay-title="Color picker" { spawn-sh "pkill hyprpicker || hyprpicker -a"; }
+    // TODO: Implement extract text (OCR) from screenshot
+    // Mod+Ctrl+Print hotkey-overlay-title="Extract text (OCR) from screenshot" { spawn ""; }
+
+    // Control panels
+    // TODO: Implement audio controls
+    // Mod+Ctrl+A hotkey-overlay-title="Audio controls" { spawn ""; }
+    // TODO: Implement bluetooth controls
+    // Mod+Ctrl+B hotkey-overlay-title="Bluetooth controls" { spawn ""; }
+    // TODO: Implement wifi controls
+    // Mod+Ctrl+W hotkey-overlay-title="Wifi controls" { spawn ""; }
+    // TODO: Implement activity
+    // Mod+Ctrl+T hotkey-overlay-title="Activity" { spawn ""; }
+
+    // Lock system
+    Mod+Ctrl+L hotkey-overlay-title="Lock system" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -34,13 +86,9 @@ binds {
     //
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
 }

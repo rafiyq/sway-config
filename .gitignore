@@ -1,0 +1,11 @@
+# IDE / Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Archived / Historical directories (preserved on backup/archives branch)
+archives/
+sway/old/
