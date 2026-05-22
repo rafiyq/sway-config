@@ -1,81 +1,18 @@
 // ===========================================================================
-// BASE CONFIGURATION
-// Shared waybar modules for both Sway and Niri compositors.
-// Include this file in your per-compositor config.
+// BUILT-IN MODULE
 // ===========================================================================
 {
     "tray": {
         "icon-size": 12,
-        "spacing": 17
+        "spacing": 17,
     },
-    "custom/expand-icon": {
-        "format": "",
-        "tooltip": false,
-        "on-scroll-up": "",
-        "on-scroll-down": "",
-        "on-scroll-left": "",
-        "on-scroll-right": ""
-    },
-    "custom/menu": {
-        "format": "",
-        "on-click": "$HOME/.config/waybar/script/menu.sh app",
-        "on-click-right": "xdg-terminal-exec",
-        "tooltip-format": "Open Menu\n\nSuper + Space"
-    },
-    "custom/notification-indicator": {
-        "on-click": "$HOME/.config/waybar/script/notif-waybar.sh toggle",
-        "exec": "$HOME/.config/waybar/script/notif-waybar.sh status",
-        "signal": 10,
-        "return-type": "json"
-    },
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "$HOME/.config/waybar/script/menu.sh app"
-    },
-    "custom/update": {
-        "format": "",
-        "exec": "$HOME/.config/waybar/script/check-update.sh",
-        "on-click": "$HOME/.config/waybar/script/tui.sh update",
-        "tooltip-format": "Updates are available!",
-        "signal": 7,
-        "interval": 21600
-    },
-    "custom/weather": {
-        "format": "{}°",
-        "tooltip": true,
-        "interval": 1800,
-        "exec": "cat $HOME/Downloads/wttrbar_ouput.json",
-        "return-type": "json"
-    },
+
     "battery": {
         "format": "<span rise='1000'>{icon}</span> {capacity}%",
         "format-plugged": "",
         "format-icons": {
-            "charging": [
-                "󰢜",
-                "󰂆",
-                "󰂇",
-                "󰂈",
-                "󰢝",
-                "󰂉",
-                "󰢞",
-                "󰂊",
-                "󰂋",
-                "󰂅"
-            ],
-            "default": [
-                "󰁺",
-                "󰁻",
-                "󰁼",
-                "󰁽",
-                "󰁾",
-                "󰁿",
-                "󰂀",
-                "󰂁",
-                "󰂂",
-                "󰁹"
-            ]
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         },
         "format-full": "󰂅",
         "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
@@ -83,9 +20,10 @@
         "interval": 5,
         "states": {
             "warning": 20,
-            "critical": 10
-        }
+            "critical": 10,
+        },
     },
+
     "bluetooth": {
         "format": "",
         "format-off": "󰂲",
@@ -95,8 +33,9 @@
         "tooltip-format-connected": "Devices connected: <b>{num_connections}</b>\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": " {device_alias}",
         "tooltip-format-enumerate-connected-battery": " {device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager"
+        "on-click": "blueman-manager",
     },
+
     "clock": {
         "format": "{:L%A %H:%M}",
         "format-alt": "{:L%e %B %Y (Week %V)}",
@@ -105,59 +44,55 @@
             "mode": "month",
             "on-scroll": 1,
             "format": {
-                "today": "<span color='#ff6699'><b>{}</b></span>"
-            }
-        }
+                "today": "<span color='#ff6699'><b>{}</b></span>",
+            },
+        },
     },
+
     "cpu": {
         "interval": 5,
-        "format": "<span rise='1000'></span> {usage}%"
+        "format": "<span rise='1000'></span> {usage}%",
     },
+
     "disk": {
         "interval": 30,
         "format": "<span rise='1000'>󰋊</span> {percentage_used}%",
         "tooltip-format": "Total: \t{total}\nUsed: \t{used}\nFree: \t{free}",
-        "path": "/"
+        "path": "/",
     },
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "󱫖",
-            "deactivated": "󰔛"
-        }
+            "deactivated": "󰔛",
+        },
     },
+
     "memory": {
         "format": "<span rise='1000'></span> {percentage}%",
-        "tooltip-format": "{used:0.1f}G/{total:0.1f}G of RAM\n{swapUsed:0.1f}G/{swapTotal:0.1f}G of SWAP"
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G of RAM\n{swapUsed:0.1f}G/{swapTotal:0.1f}G of SWAP",
     },
+
     "mpris": {
         "format": "<span rise='1000'>{player_icon}</span> {dynamic}",
         "format-paused": "<span rise='1000'>{status_icon}</span> {dynamic}",
         "tooltip-format-playing": "Now Playing {dynamic} on {player} at {position} to {length}",
         "player-icons": {
             "default": " ",
-            "mpv": " "
+            "mpv": " ",
         },
         "status-icons": {
-            "paused": " "
+            "paused": " ",
         },
-        "dynamic-order": [
-            "artist",
-            "title",
-            "album"
-        ],
+        "dynamic-order": ["artist", "title", "album"],
         "title-len": 50,
         "artist-len": 20,
-        "album-len": 20
+        "album-len": 20,
     },
+
     "network": {
-        "format-icons": [
-            "󰤯",
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "format": "{icon}",
         "format-wifi": "{icon}",
         "format-ethernet": "󰀂",
@@ -167,8 +102,9 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 3,
         "spacing": 1,
-        "on-click": "omarchy-launch-wifi"
+        "on-click": "omarchy-launch-wifi",
     },
+
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile} ({driver})",
@@ -177,9 +113,10 @@
             "default": "󰓅",
             "performance": "󰓅",
             "balanced": "󰾅",
-            "power-saver": "󰾆"
-        }
+            "power-saver": "󰾆",
+        },
     },
+
     "pulseaudio": {
         "format": "{icon}",
         "on-click": "$HOME/.config/waybar/script/tui.sh audio",
@@ -189,15 +126,12 @@
         "format-icons": {
             "headphone": "",
             "headset": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        }
+            "default": ["", "", ""],
+        },
     },
+
     "temperature": {
         "critical-threshold": 80,
-        "format": "<span rise='1000'>󰏈</span> {temperatureC}°C"
-    }
+        "format": "<span rise='1000'>󰏈</span> {temperatureC}°C",
+    },
 }

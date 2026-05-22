@@ -1,0 +1,50 @@
+// ===========================================================================
+// CUSTOM MODULE
+// ===========================================================================
+{
+    "custom/expand-icon": {
+        "format": "",
+        "tooltip": false,
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "on-scroll-left": "",
+        "on-scroll-right": "",
+    },
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "$HOME/.config/waybar/script/menu.sh app",
+        "on-click-right": "xdg-terminal-exec",
+        "tooltip-format": "Open Menu\n\nSuper + Space",
+    },
+
+    "custom/notification-indicator": {
+        "on-click": "$HOME/.config/waybar/script/notif-waybar.sh toggle",
+        "exec": "$HOME/.config/waybar/script/notif-waybar.sh status",
+        "signal": 10,
+        "return-type": "json",
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "$HOME/.config/waybar/script/menu.sh app",
+    },
+
+    "custom/update": {
+        "format": "",
+        "exec": "$HOME/.config/waybar/script/check-update.sh",
+        "on-click": "$HOME/.config/waybar/script/tui.sh update",
+        "tooltip-format": "Updates are available!",
+        "signal": 7,
+        "interval": 21600,
+    },
+
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "cuaca --name bangkle",
+        "return-type": "json",
+    },
+}
