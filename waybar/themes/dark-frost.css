@@ -1,0 +1,103 @@
+@define-color background #0d1117;
+@define-color foreground #c9d1d9;
+@define-color accent #58a6ff;
+@define-color critical #f85149;
+@define-color success #3fb950;
+@define-color warning #d29922;
+
+/* ==========================================================================
+   FROSTED GLASS EFFECT
+   Semi-transparent backgrounds with subtle borders and shadows.
+   Works on GTK3 (no true backdrop-filter blur, but looks close enough).
+   ========================================================================== */
+
+/* Window background — semi-transparent with subtle border */
+window#waybar {
+    background: rgba(27, 45, 64, 0.55);
+    border-bottom: 1px solid rgba(111, 184, 227, 0.15);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    color: @foreground;
+    /* Soft text shadow for legibility on bright wallpapers */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+/* Hidden state */
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Tooltip frosted treatment */
+tooltip {
+    background: rgba(27, 45, 64, 0.85);
+    border: 1px solid rgba(111, 184, 227, 0.2);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    color: @foreground;
+}
+
+/* Workspace buttons */
+#workspaces button {
+    all: initial;
+    font-weight: 500;
+    padding: 0 5px;
+    margin: 0 2px;
+    min-width: 9px;
+    opacity: 0.5;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button.urgent {
+    color: @critical;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    opacity: 1;
+    text-shadow: 0 0 4px @accent;
+}
+
+/* Frosted accent for active modules */
+#mode {
+    background: rgba(165, 85, 85, 0.6);
+    border-radius: 6px;
+}
+
+#mpris {
+    text-shadow: 0 0 4px @accent;
+}
+
+/* Colored indicators */
+#custom-notification-indicator.on {
+    color: @accent;
+}
+
+#custom-notification-indicator.off {
+    color: @warning;
+}
+
+/* Warning states */
+#battery.warning:not(.charging),
+#cpu.warning,
+#disk.warning,
+#temperature.warning,
+#memory.warning {
+    color: @warning;
+    text-shadow: 0 0 4px @warning;
+}
+
+/* Critical blink with glow */
+@keyframes blink {
+    to {
+        color: @critical;
+        text-shadow:
+            0 0 10px @critical,
+            0 0 20px @critical,
+            0 0 30px @critical;
+    }
+}
+
+#temperature.critical,
+#battery.critical:not(.charging) {
+    color: @critical;
+}
