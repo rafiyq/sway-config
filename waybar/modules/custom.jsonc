@@ -10,27 +10,23 @@
         "on-scroll-left": "",
         "on-scroll-right": "",
     },
-
     "custom/menu": {
         "format": "",
-        "on-click": "$HOME/.config/waybar/script/menu.sh app",
+        "on-click": "walker --provider menus:start",
         "on-click-right": "xdg-terminal-exec",
         "tooltip-format": "Open Menu\n\nSuper + Space",
     },
-
     "custom/notification-indicator": {
         "on-click": "$HOME/.config/waybar/script/notif-waybar.sh toggle",
         "exec": "$HOME/.config/waybar/script/notif-waybar.sh status",
         "signal": 10,
         "return-type": "json",
     },
-
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "on-click": "$HOME/.config/waybar/script/menu.sh app",
+        "on-click": "walker --provider menus:system",
     },
-
     "custom/update": {
         "format": "",
         "exec": "$HOME/.config/waybar/script/check-update.sh",
@@ -39,12 +35,12 @@
         "signal": 7,
         "interval": 21600,
     },
-
     "custom/weather": {
-        "format": "{}°",
+        "format": "{} C",
         "tooltip": true,
         "interval": 1800,
-        "exec": "cuaca --name bangkle",
+        "exec": "cuaca --name bangkle --lang id",
+        // "exec": "cat $HOME/Downloads/cuaca_output.json",
         "return-type": "json",
     },
 }
