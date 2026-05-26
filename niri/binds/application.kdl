@@ -8,7 +8,7 @@ binds {
     Mod+Shift+B hotkey-overlay-title="Browser" { spawn "brave-origin"; }
     Super+Shift+Alt+B hotkey-overlay-title="Browser (private)" { spawn "brave-origin" "--incognito"; }
     Mod+Shift+M hotkey-overlay-title="Music" { spawn "brave-origin" "app-id=$YOUTUBE_MUSIC_APP_ID"; }
-    Mod+Shift+Z hotkey-overlay-title="Editor" { spawn "zed"; }
+    Mod+Shift+Z hotkey-overlay-title="Editor" { spawn "zed" "--new"; }
     Mod+Shift+G hotkey-overlay-title="Messages" { spawn "brave-origin" "app-id=$YOUTUBE_MUSIC_APP_ID"; }
     Mod+Shift+O hotkey-overlay-title="Obsidian" { spawn "obsidian"; }
     Mod+Shift+Slash hotkey-overlay-title="Passwords" { spawn "bitwarden"; }
