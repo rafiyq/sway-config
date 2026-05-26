@@ -12,19 +12,20 @@ binds {
     // `niri msg action do-something`.
 
     // Menus
-    Mod+Space hotkey-overlay-title="Launch apps" { spawn "walker"; }
+    Mod+Space hotkey-overlay-title="Launch apps" { spawn-sh "walker -m desktopapplications -p Launch..."; }
     Mod+Ctrl+E hotkey-overlay-title="Emoji picker" { spawn-sh "walker -m symbols"; }
-    Mod+Ctrl+C hotkey-overlay-title="Capture menu" { spawn "walker"; }
-    Mod+Ctrl+O hotkey-overlay-title="Toggle menu" { spawn "walker"; }
-    Mod+Ctrl+H hotkey-overlay-title="Hardware menu" { spawn "walker"; }
-    Super+Alt+Space hotkey-overlay-title="Main menu" { spawn "walker"; }
-    Mod+Escape hotkey-overlay-title="System menu" { spawn "walker --provider menus:system"; }
+    Mod+Ctrl+C hotkey-overlay-title="Capture menu" { spawn-sh "walker --provider menus:capture"; }
+    Mod+Ctrl+O hotkey-overlay-title="Toggle menu" { spawn-sh "walker --provider menus:toggle"; }
+    Mod+Ctrl+H hotkey-overlay-title="Hardware menu" { spawn-sh "walker --provider menus:hardware"; }
+    Super+Alt+Space hotkey-overlay-title="Main menu" { spawn-sh "walker --provider menus:start"; }
+    Mod+Escape hotkey-overlay-title="Power menu" { spawn-sh "walker --provider menus:system"; }
     Mod+K hotkey-overlay-title="Show key bindings" { show-hotkey-overlay; }
-    XF86PowerOff hotkey-overlay-title="Power menu" { spawn "walker"; }
-    XF86Calculator hotkey-overlay-title="Calculator" { spawn "gnome-calculator"; }
+    XF86PowerOff hotkey-overlay-title="Power menu" { spawn-sh "walker --provider menus:system"; }
+    XF86Calculator hotkey-overlay-title="Calculator" { spawn-sh "walker -m calc"; }
 
     // Aesthetics
     Mod+Shift+Space hotkey-overlay-title="Toggle top bar" { spawn-sh "killall -SIGUSR1 waybar"; }
+    Mod+Shift+Ctrl+Space hotkey-overlay-title="Reload top bar" { spawn-sh "killall -SIGUSR2 waybar"; }
     // SUPER CTRL, SPACE, Theme background menu, exec, omarchy-menu background
     // SUPER SHIFT CTRL, SPACE, Theme menu, exec, omarchy-menu theme
     // SUPER, BACKSPACE, Toggle window transparency, exec, omarchy-hyprland-window-transparency-toggle
