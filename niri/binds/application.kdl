@@ -4,12 +4,12 @@
 binds {
     Mod+Return hotkey-overlay-title="Terminal" { spawn "xdg-terminal-exec"; }
     Mod+Shift+Return hotkey-overlay-title="Tmux" { spawn "xdg-terminal-exec bash -c \"tmux attach || tmux new -s Work\""; }
-    Mod+Shift+F hotkey-overlay-title="File manager" { spawn "nautilus --new-window"; }
+    Mod+Shift+F hotkey-overlay-title="File manager" { spawn "nautilus" "--new-window"; }
     Mod+Shift+B hotkey-overlay-title="Browser" { spawn "brave-origin"; }
-    Super+Shift+Alt+B hotkey-overlay-title="Browser (private)" { spawn "brave-origin --private"; }
-    // TODO: Mod+Shift+M hotkey-overlay-title="Music" { spawn ""; }
-    Mod+Shift+N hotkey-overlay-title="Editor" { spawn "zed"; }
-    // TODO: Mod+Shift+G hotkey-overlay-title="Messages" { spawn ""; }
+    Super+Shift+Alt+B hotkey-overlay-title="Browser (private)" { spawn "brave-origin" "--incognito"; }
+    Mod+Shift+M hotkey-overlay-title="Music" { spawn "brave-origin" "app-id=$YOUTUBE_MUSIC_APP_ID"; }
+    Mod+Shift+Z hotkey-overlay-title="Editor" { spawn "zed"; }
+    Mod+Shift+G hotkey-overlay-title="Messages" { spawn "brave-origin" "app-id=$YOUTUBE_MUSIC_APP_ID"; }
     Mod+Shift+O hotkey-overlay-title="Obsidian" { spawn "obsidian"; }
     Mod+Shift+Slash hotkey-overlay-title="Passwords" { spawn "bitwarden"; }
 }
