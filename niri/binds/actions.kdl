@@ -60,6 +60,12 @@ binds {
     // TODO: Implement extract text (OCR) from screenshot
     // Mod+Ctrl+Print hotkey-overlay-title="Extract text (OCR) from screenshot" { spawn ""; }
 
+    // Clipboard
+    Mod+C hotkey-overlay-title="Universal copy" { spawn ""; }
+    Mod+V hotkey-overlay-title="Universal paste" { spawn ""; }
+    Mod+X hotkey-overlay-title="Universal cut" { spawn ""; }
+    Mod+Ctrl+V hotkey-overlay-title="Clipboard manager" { spawn "walker" "-m" "clipboard"; }
+
     // Control panels
     // TODO: Implement audio controls
     // Mod+Ctrl+A hotkey-overlay-title="Audio controls" { spawn ""; }
