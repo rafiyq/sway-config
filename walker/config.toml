@@ -1,0 +1,4 @@
+theme = "lumon"
+
+[columns]
+"symbols" = 1
