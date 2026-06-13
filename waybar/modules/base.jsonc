@@ -33,7 +33,7 @@
         "tooltip-format-connected": "Devices connected: <b>{num_connections}</b>\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": " {device_alias}",
         "tooltip-format-enumerate-connected-battery": " {device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager",
+        "on-click": "$HOME/.config/waybar/script/tui.sh bluetooth",
     },
 
     "clock": {
@@ -102,7 +102,7 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 3,
         "spacing": 1,
-        "on-click": "omarchy-launch-wifi",
+        "on-click": "$HOME/.config/waybar/script/tui.sh network",
     },
 
     "power-profiles-daemon": {
