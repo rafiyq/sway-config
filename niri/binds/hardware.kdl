@@ -1,13 +1,13 @@
 // Key Bindings
 // Wiki: https://niri-wm.github.io/niri/Configuration:-Key-Bindings
 binds {
-    // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "volume-helper --increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "volume-helper --decrease"; }
+    Shift+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "volume-helper --sink running --increase"; }
+    Shift+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "volume-helper --sink running --decrease"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && volume-helper"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Example media keys mapping using playerctl.
