@@ -17,6 +17,12 @@ layout {
         inactive-color "#30486055"
         offset x=0 y=0
     }
+
+    tab-indicator {
+        active-color "#6fb8e3"
+        inactive-color "#4A6B80"
+        urgent-color "#e06c75"
+    }
 }
 
 window-rule {

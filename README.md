@@ -7,12 +7,14 @@ Sway desktop environment build from Fedora Sway spin.
 - Nautilus for file explorer
 - wiremix for audio
 - xdg-terminal-exec
-- iwd for networking
+- iwd and impala for networking
 - bluetui for bluetooth
 
 ## Package removed
 
 - Thunar
+- NetworkManager
+- blueman
 
 ## Network
 

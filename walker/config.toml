@@ -2,3 +2,11 @@ theme = "lumon"
 
 [columns]
 "symbols" = 1
+
+[providers]
+default = [
+    "desktopapplications",
+    "calc",
+    "menus",
+    "symbols",
+]

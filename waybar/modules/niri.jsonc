@@ -11,9 +11,6 @@
     "modules-left": [
         "custom/menu",
         "niri/workspaces",
-        "sway/workspaces",
-        "sway/scratchpad",
-        "sway/mode",
         "mpris",
     ],
     "modules-center": [

@@ -14,7 +14,6 @@ binds {
     // Menus
     Mod+Space hotkey-overlay-title="Launch apps" { spawn-sh "walker -m desktopapplications -p Launch..."; }
     Mod+Ctrl+E hotkey-overlay-title="Emoji picker" { spawn-sh "walker -m symbols"; }
-    Mod+Ctrl+C hotkey-overlay-title="Capture menu" { spawn-sh "walker --provider menus:capture"; }
     Mod+Ctrl+O hotkey-overlay-title="Toggle menu" { spawn-sh "walker --provider menus:toggle"; }
     Mod+Ctrl+H hotkey-overlay-title="Hardware menu" { spawn-sh "walker --provider menus:hardware"; }
     Super+Alt+Space hotkey-overlay-title="Main menu" { spawn-sh "walker --provider menus:start"; }
@@ -33,7 +32,6 @@ binds {
     // SUPER CTRL, BACKSPACE, Toggle single-window square aspect, exec, omarchy-hyprland-window-single-square-aspect-toggle
 
     // Notifications
-    Mod+Comma hotkey-overlay-title="Dismiss last notification" { spawn "makoctl dismiss"; }
     Mod+Shift+Comma hotkey-overlay-title="Dismiss all notifications" { spawn "makoctl dismiss --all"; }
     // TODO: Implement toggle silencing notifications
     // Mod+Ctrl+Comma hotkey-overlay-title="Toggle silencing notifications" { spawn ""; }
@@ -61,9 +59,6 @@ binds {
     // Mod+Ctrl+Print hotkey-overlay-title="Extract text (OCR) from screenshot" { spawn ""; }
 
     // Clipboard
-    Mod+C hotkey-overlay-title="Universal copy" { spawn ""; }
-    Mod+V hotkey-overlay-title="Universal paste" { spawn ""; }
-    Mod+X hotkey-overlay-title="Universal cut" { spawn ""; }
     Mod+Ctrl+V hotkey-overlay-title="Clipboard manager" { spawn "walker" "-m" "clipboard"; }
 
     // Control panels

@@ -14,3 +14,6 @@ default-timeout=4321
 
 [urgency=high]
 default-timeout=0
+
+[mode=dnd]
+invisible=1
